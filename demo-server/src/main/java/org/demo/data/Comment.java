@@ -61,4 +61,14 @@ public class Comment {
         this.message = message;
     }
 
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "id=" + id +
+                ", message='" + message + '\'' +
+                ", unregisteredAuthor='" + unregisteredAuthor + '\'' +
+                ", registeredAuthor=" + registeredAuthor +
+                ", issue=" + issue +
+                '}';
+    }
 }

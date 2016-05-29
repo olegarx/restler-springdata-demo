@@ -1,3 +1,3 @@
-CREATE TABLE persons(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));
+CREATE TABLE persons(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) UNIQUE);
 CREATE TABLE issues(id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255), message TEXT, resolved BOOL, unregisteredAuthor VARCHAR(255), registeredAuthor_id INT, FOREIGN KEY(registeredAuthor_id) REFERENCES persons(id));
 CREATE TABLE comments(id INT AUTO_INCREMENT PRIMARY KEY, message VARCHAR(255), unregisteredAuthor VARCHAR(255), registeredAuthor_id INT, issue_id INT, FOREIGN KEY(registeredAuthor_id) REFERENCES persons(id), FOREIGN KEY(issue_id) REFERENCES issues(id));
